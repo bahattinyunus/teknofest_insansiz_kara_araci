@@ -1,0 +1,41 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#0A0E14" />
+  <path d="M0 0 L800 0 M0 40 L800 40 M0 360 L800 360 M0 400 L800 400" stroke="#1B2631" stroke-width="1" />
+  <path d="M40 0 L40 400 M760 0 L760 400" stroke="#1B2631" stroke-width="1" />
+  
+  <!-- Blueprint Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B2631" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <!-- Robot Chassis Side View -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="50" width="300" height="80" fill="none" stroke="#00B0FF" stroke-width="2" />
+    <circle cx="50" cy="140" r="40" fill="none" stroke="#00B0FF" stroke-width="2" />
+    <circle cx="250" cy="140" r="40" fill="none" stroke="#00B0FF" stroke-width="2" />
+    <rect x="100" y="20" width="100" height="30" fill="none" stroke="#D50000" stroke-width="1" />
+    <text x="150" y="10" font-family="monospace" font-size="10" fill="#D50000" text-anchor="middle">LiDAR_UNIT_V2</text>
+    
+    <!-- Measurement lines -->
+    <path d="M0 50 L-20 50 M0 130 L-20 130 M-15 50 L-15 130" stroke="#546E7A" stroke-width="1" />
+    <text x="-35" y="95" transform="rotate(-90, -35, 95)" font-family="monospace" font-size="10" fill="#546E7A" text-anchor="middle">800mm</text>
+  </g>
+
+  <!-- Technical Specs Box -->
+  <g transform="translate(450, 80)">
+    <rect x="0" y="0" width="300" height="240" fill="none" stroke="#00B0FF" stroke-width="1" stroke-dasharray="5,5" />
+    <text x="10" y="30" font-family="monospace" font-size="18" fill="#00B0FF" font-weight="bold">SYSTEM_SPECS</text>
+    <text x="10" y="60" font-family="monospace" font-size="12" fill="white">CPU: NVIDIA JETSON ORIN NANO</text>
+    <text x="10" y="85" font-family="monospace" font-size="12" fill="white">SENSORS: 360 LiDAR + DEPTH CAM</text>
+    <text x="10" y="110" font-family="monospace" font-size="12" fill="white">CHASSIS: 4WD DIFFERENTIAL DRIVE</text>
+    <text x="10" y="135" font-family="monospace" font-size="12" fill="white">OS: UBUNTU 22.04 LTS (ROS2)</text>
+    
+    <rect x="10" y="180" width="280" height="40" fill="#304FFE" opacity="0.2" />
+    <text x="150" y="205" font-family="monospace" font-size="14" fill="#00B0FF" text-anchor="middle" font-weight="bold">READY_FOR_DEPLOYMENT</text>
+  </g>
+  
+  <text x="400" y="385" font-family="monospace" font-size="12" fill="#546E7A" text-anchor="middle" letter-spacing="5">TACTICAL_UNIT_BLUEPRINT_CONFIDENTIAL</text>
+</svg>
