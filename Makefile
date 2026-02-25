@@ -8,6 +8,7 @@ default:
 	@echo "  make test          - Run pytest suite"
 	@echo "  make docker-build  - Build the containerized development environment"
 	@echo "  make docker-up     - Spin up the ROS 2 container"
+	@echo "  make simulate      - Launch the Gazebo high-fidelity tactical arena"
 	@echo "  make clean         - Deep clean python cache files"
 
 # Quality Checks
@@ -34,3 +35,7 @@ clean:
 	find . -type d -name ".pytest_cache" -exec rm -r {} +
 	find . -type f -name "*.pyc" -delete
 	@echo "[*] Clean up complete."
+
+# Simulation Commands
+simulate:
+	ros2 launch teknofest_insansiz_kara_araci gokboru_gazebo.launch.py
