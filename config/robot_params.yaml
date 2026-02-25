@@ -1,0 +1,29 @@
+# Gökbörü SOTM - Robot Configuration Parameters
+# This file centralizes hardcoded values for easier tuning
+
+robot:
+  id: "GOKBORU-01"
+  type: "UGV"
+  max_speed: 2.5
+  max_turn_rate: 1.0
+
+sensors:
+  lidar:
+    port: "/dev/ttyUSB0"
+    baudrate: 256000
+    frame_id: "laser_link"
+  camera:
+    resolution: [1920, 1080]
+    framerate: 30
+
+control:
+  pid:
+    kp: 1.5
+    ki: 0.1
+    kd: 0.05
+    max_output: 100
+    min_output: -100
+
+mission:
+  timeout_seconds: 1800
+  safe_mode_enabled: true
