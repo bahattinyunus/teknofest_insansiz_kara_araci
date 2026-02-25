@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gokboru-core:
+    build: .
+    container_name: gokboru_core_node
+    environment:
+      - ROS_DOMAIN_ID=42
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      # Mount the current repository so changes are reflected in real-time
+      - .:/home/gokboru_ws/src/teknofest_insansiz_kara_araci
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    network_mode: "host"
+    privileged: true
+    tty: true
+    stdin_open: true
+    command: /bin/bash -c "source /opt/ros/humble/setup.bash && gokboru-core-startup || sleep infinity"
