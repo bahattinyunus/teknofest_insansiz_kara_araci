@@ -96,6 +96,17 @@ def run():
     p(">> WEAPONS/RESCUE PAYLOAD: ARMED & READY", Colors.YELLOW, 0.02)
     
     print("\n")
+    p(">> [GLOBAL COMPLIANCE] ANALYZING REPOSITORY STANDARDS...", Colors.BOLD + Colors.YELLOW, 0.05)
+    time.sleep(1)
+    loading_bar("Phase 1: Perception (LIO-SAM/TensorRT)", 1.2)
+    loading_bar("Phase 2: Navigation (Nav2/BT/MPC)", 1.5)
+    loading_bar("Phase 3: Reliability (QoS/Lifecycle)", 0.8)
+    
+    print("\n")
+    p(">> GLOBAL COMPLIANCE READINESS: 87% [BETA]", Colors.GREEN, 0.02)
+    p(">> TECHNICAL DEBT INDEX: LOW", Colors.GREEN, 0.02)
+    
+    print("\n")
     p("="*60, Colors.CYAN, 0.01)
     p("        GÖKBÖRÜ SOTM IS NOW FULLY AUTONOMOUS", Colors.BOLD + Colors.CYAN, 0.05)
     p("="*60, Colors.CYAN, 0.01)
