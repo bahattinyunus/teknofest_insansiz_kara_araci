@@ -1,4 +1,9 @@
-
+# Gökbörü SOTM - Tactical Intelligence Stack
 pytest==7.4.3
 pyyaml==6.0.1
 flake8==6.1.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+ultralytics>=8.0.0
+filterpy>=1.4.5
+matplotlib>=3.7.0
