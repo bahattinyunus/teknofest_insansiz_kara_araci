@@ -1,4 +1,4 @@
-name: AUV System CI/CD Pipeline
+name: UGV System CI/CD Pipeline
 
 on:
   push:
