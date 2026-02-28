@@ -18,7 +18,9 @@ class MissionState:
     NAVIGATING = 2
     PERCEPTION_ANALYSIS = 3
     RECOVERY = 4
-    COMPLETED = 5
+    PARKING = 5
+    OBSTACLE_AVOIDANCE = 6
+    COMPLETED = 7
 
 class MissionManager:
     def __init__(self):
@@ -35,6 +37,10 @@ class MissionManager:
                 self._handle_nav()
             elif self.state == MissionState.PERCEPTION_ANALYSIS:
                 self._handle_perception()
+            elif self.state == MissionState.OBSTACLE_AVOIDANCE:
+                self._handle_obstacle()
+            elif self.state == MissionState.PARKING:
+                self._handle_parking()
             
             time.sleep(1)
 
@@ -49,14 +55,24 @@ class MissionManager:
 
     def _handle_nav(self):
         logger.info("Executing Pure Pursuit Waypoint Following.")
-        # In a real environment, we'd check for obstacles here
+        # Trigger obstacle avoidance periodically
+        self.state = MissionState.OBSTACLE_AVOIDANCE
+
+    def _handle_obstacle(self):
+        logger.info("VFH Obstacle Avoidance Override active.")
+        # Simulated clearing
         self.state = MissionState.PERCEPTION_ANALYSIS
 
     def _handle_perception(self):
         logger.info("Analyzing Environment for Traffic Signs/Obstacles.")
-        # Mocking target reached
+        # Simulating "Park Sign Found"
+        self.state = MissionState.PARKING
+
+    def _handle_parking(self):
+        logger.info("Executing Autonomous Parking Maneuvers...")
+        # Simulated completion
         self.state = MissionState.COMPLETED
-        logger.info("MISSION ACCOMPLISHED. RETURN TO BASE.")
+        logger.info("MISSION ACCOMPLISHED. SYSTEM SECURED.")
 
 if __name__ == "__main__":
     manager = MissionManager()
